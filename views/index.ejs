@@ -1,10 +1,73 @@
-<html>
-    <head>
-        <title> Kris's Portfolio </title>
-    </head>
-    <body>
-        <div>
-        Welcome
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="/" class="logo">Kristopher Sherbondy</a>
+
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Software Developer in Transition</p>
+
+      <h1>Building software with a security-first mindset.</h1>
+
+      <p class="hero-text">
+        I am a retiring U.S. Air Force Security Forces Senior Noncommissioned Officer
+        transitioning into software development through DoD SkillBridge. My work focuses
+        on practical web development, databases, software security, and building tools
+        that are simple, reliable, and understandable.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button" href="/portfolio">View Projects</a>
+        <a class="button secondary" href="/contact">Contact Me</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Featured Work</h2>
+
+      <div class="project-grid">
+        <% projects.forEach(function(project) { %>
+          <article class="project-card">
+            <h3><%= project.name %></h3>
+            <p><%= project.description %></p>
+            <a href="<%= project.url %>" target="_blank" rel="noopener noreferrer">
+              View Project
+            </a>
+          </article>
+        <% }); %>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Current Focus</h2>
+
+      <ul class="focus-list">
+        <li>JavaScript, React, Node.js, and Express</li>
+        <li>MongoDB, SQL, Redis, and database-backed applications</li>
+        <li>Secure coding, documentation, and practical systems design</li>
+        <li>Building portfolio projects and deploying full-stack applications</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <%= new Date().getFullYear() %> Kristopher Sherbondy</p>
+  </footer>
+</body>
 </html>

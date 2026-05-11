@@ -1,0 +1,46 @@
+<%- include("partials/header", { title }) %>
+
+<main class="container narrow">
+  <section class="section page-heading">
+    <p class="eyebrow">Contact</p>
+    <h1>Get in touch</h1>
+    <p>Send your contact information and I will follow up.</p>
+  </section>
+
+  <% if (error) { %>
+    <p class="error-message"><%= error %></p>
+  <% } %>
+
+  <form class="contact-form" action="/thanks" method="POST">
+    <label for="firstName">First Name</label>
+    <input
+      id="firstName"
+      name="firstName"
+      type="text"
+      value="<%= formData.firstName || '' %>"
+      required
+    />
+
+    <label for="lastName">Last Name</label>
+    <input
+      id="lastName"
+      name="lastName"
+      type="text"
+      value="<%= formData.lastName || '' %>"
+      required
+    />
+
+    <label for="email">Email</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      value="<%= formData.email || '' %>"
+      required
+    />
+
+    <button class="button" type="submit">Submit</button>
+  </form>
+</main>
+
+<%- include("partials/footer") %>

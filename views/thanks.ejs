@@ -1,0 +1,12 @@
+<%- include("partials/header", { title }) %>
+
+<main class="container narrow">
+  <section class="section thank-you-card">
+    <p class="eyebrow">Message Received</p>
+    <h1>Thank you, <%= contact.firstName %> <%= contact.lastName %>.</h1>
+    <p>I received your contact request and have your email as <strong><%= contact.email %></strong>.</p>
+    <a class="button" href="/">Back Home</a>
+  </section>
+</main>
+
+<%- include("partials/footer") %>
